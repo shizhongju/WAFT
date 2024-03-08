@@ -4,12 +4,12 @@ This file is centered around the Weighted Affine Fourier Transform (WAFT). The `
 ## Compiler
 MATLAB 2021
 
-### Introduction
+## Introduction
 WAFT.m is a function of generating WAFT symbols.Here is the instructions.
 
-# How to use
+## How to use
 y = WAFT(fft_length,alpha,beta,signal_in)
-# Parameters introductions
+### Parameters introductions
 
 **Inputs:**  
 - `fft_length`: The length of one WAFT symbol or the count of subcarriers.  
