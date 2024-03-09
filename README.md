@@ -1,5 +1,5 @@
 # WAFT
-This file is centered around the Weighted Affine Fourier Transform (WAFT). The `WAFT.m` (a function) script offers the source code necessary for generating a WAFT signal. This signal is particularly valuable for simulating communication systems. The $\alpha$-order represents a positive transform, and the corresponding inverse transform is a negative -$\alpha$-order transform.
+This file is centered around the Weighted Affine Fourier Transform (WAFT). The `WAFT.m` (a function) script offers the source code necessary for generating a WAFT signal. This signal is particularly valuable for simulating communication systems. The $`\alpha`$-order represents a positive transform, and the corresponding inverse transform is a negative -$`\alpha`$-order transform.
 
 ## Compiler
 MATLAB 2021
