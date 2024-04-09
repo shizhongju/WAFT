@@ -20,14 +20,16 @@ w0 = cos((alpha-0)*pi/4).*cos(2*(alpha-0)*pi/4).*exp(3*(alpha-0)*pi*1i/4);
 w1 = cos((alpha-1)*pi/4).*cos(2*(alpha-1)*pi/4).*exp(3*(alpha-1)*pi*1i/4);
 w2 = cos((alpha-2)*pi/4).*cos(2*(alpha-2)*pi/4).*exp(3*(alpha-2)*pi*1i/4);
 w3 = cos((alpha-3)*pi/4).*cos(2*(alpha-3)*pi/4).*exp(3*(alpha-3)*pi*1i/4);
-F = dftmtx(N)/sqrt(N);  % normalized discrete Fourier transform matrix"
+
 
 %% conculate the Lambda matrix
 Lambda_mtx = zeros(fft_length,fft_length);
 i = 0:fft_length-1; 
 Lambda_mtx = diag(exp(-1j*2*pi*beta*i.^2));
 %% acquire WAFT signal   WAFT_matrix = Lambda_mtx'*(w0*eye(fft_length) + w1*F + w2*p_matrix + w3*p_matrix*F)*Lambda_mtx;
-WAFT_signal_out = w0*signal_in+w1*Lambda_mtx'*fft(Lambda_mtx*signal_in,fft_length,1) + w2*Lambda_mtx'*p_matrix*Lambda_mtx*...
-signal_in + w3*Lambda_mtx'*p_matrix*fft(Lambda_mtx*signal_in,fft_length,1);
+WAFT_signal_out = w0*signal_in+w1*Lambda_mtx'*fft(Lambda_mtx*signal_in,fft_length,1)/sqrt(fft_length) + w2*Lambda_mtx'*p_matrix*Lambda_mtx*...
+signal_in + w3*Lambda_mtx'*p_matrix*fft(Lambda_mtx*signal_in,fft_length,1)/sqrt(fft_length);
 
 end
+
+
